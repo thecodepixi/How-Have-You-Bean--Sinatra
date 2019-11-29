@@ -35,8 +35,25 @@ class CoffeeController < ApplicationController
 
   get '/coffees/:id/edit' do 
     @coffee = Coffee.find(params[:id])
+    if @coffee.user_id != session[:user_id] 
+      redirect '/login' 
+    end 
 
     erb :edit
+  end 
+
+  patch '/coffees/:id' do 
+    @coffee = Coffee.find(params[:id]) 
+
+    @coffee.update(params[:coffee])
+    redirect "/coffees/#{@coffee.id}"
+  end 
+
+  delete '/coffees/:id/delete' do 
+    @coffee = Coffee.find(params[:id]) 
+    @coffee.delete 
+
+    redirect "/coffees/user/#{session[:user_id]}"
   end 
 
 end 

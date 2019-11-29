@@ -1,0 +1,22 @@
+<h2>Make changes to <%= @coffee.name %>: </h2>
+
+<form method="post" action="/coffees/<%= @coffee.id %>"> 
+<input id="hidden" type="hidden" name="_method" value="patch">
+<p><label for="coffee[name]">Coffee Name: </label>
+<input type="text" name="coffee[name]" id="coffee[name]" required>
+<p><label for="coffee[roaster]">Roaster: </label>
+<input type="text" name="coffee[roaster]" id="coffee[roaster]" required>
+<p><label for="coffee[roast_level]" required>Roast Level: </label>
+<p><input type="radio" name="coffee[roast_level]" value="light"> Light
+<p><input type="radio" name="coffee[roast_level]" value="medium"> Medium
+<p><input type="radio" name="coffee[roast_level]" value="dark"> Dark
+<p><label for="coffee[rating]" required>Rating (1 - 5 Stars):</label>
+<p><input type="radio" name="coffee[rating]" value=1> 1 Star
+<p><input type="radio" name="coffee[rating]" value=2> 2 Star
+<p><input type="radio" name="coffee[rating]" value=3> 3 Star
+<p><input type="radio" name="coffee[rating]" value=4> 4 Star
+<p><input type="radio" name="coffee[rating]" value=5> 5 Star
+<p><label for="coffee[tasting_notes]">Tasting Notes: </label>
+<p><textarea name="coffee[tasting_notes]" id="coffee[tasting_notes]" placeholder="What does this coffee taste like to you?" required></textarea>
+<p><input type="submit" value="Save Changes">
+</form> 
