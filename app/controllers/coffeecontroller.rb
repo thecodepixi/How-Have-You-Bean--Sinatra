@@ -27,4 +27,16 @@ class CoffeeController < ApplicationController
     erb :user_coffees 
   end 
 
+  get '/coffees/:id' do 
+    @coffee = Coffee.find(params[:id]) 
+
+    erb :single 
+  end 
+
+  get '/coffees/:id/edit' do 
+    @coffee = Coffee.find(params[:id])
+
+    erb :edit
+  end 
+
 end 

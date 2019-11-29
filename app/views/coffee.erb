@@ -6,6 +6,6 @@
 
 <h2>All Coffees:</h2> 
 <% @coffees.each do |coffee| %>
-<p><strong><a href="/coffees/user/<%= coffee.user_id %>"><%= coffee.user.username %></a></strong> recently tried <strong><%= coffee.name %></strong>, from <strong><%= coffee.roaster %></strong>
+<p><strong><a href="/coffees/user/<%= coffee.user_id %>"><%= coffee.user.username %></a></strong> recently tried <strong><a href="/coffees/<%= coffee.id %>"><%= coffee.name %></a></strong>, from <strong><%= coffee.roaster %></strong>
 <br>
 <% end %> 
