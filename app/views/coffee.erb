@@ -1,9 +1,11 @@
 <% if logged_in? %>
   <small> (You are logged in as <strong><%= @user.username %></strong>) </small>
+  <p><a href="/coffees/new">Add A New Coffee To Your Account</a>
+  <br><br>
 <% end %>   
 
-<h2>Select a Coffee to see more:</h2> 
+<h2>All Coffees:</h2> 
 <% @coffees.each do |coffee| %>
-<p><strong><%= coffee.user.username %></strong> recently tried <strong><%= coffee.name %></strong>, from <strong><%= coffee.roaster %></strong>
+<p><strong><a href="/coffees/user/<%= coffee.user_id %>"><%= coffee.user.username %></a></strong> recently tried <strong><%= coffee.name %></strong>, from <strong><%= coffee.roaster %></strong>
 <br>
 <% end %> 

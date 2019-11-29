@@ -1,8 +1,7 @@
 class UserController < ApplicationController
-  
+
   get '/' do 
-    @coffees = Coffee.all 
-    erb :coffee
+    redirect '/coffees'
   end 
 
   get '/login' do 
@@ -16,7 +15,7 @@ class UserController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id 
-      redirect '/coffee'
+      redirect '/coffees'
     else 
       redirect '/signup'
     end 
@@ -33,7 +32,7 @@ class UserController < ApplicationController
 
     user = User.create(params)
     session[:user_id] = user.id 
-    redirect '/coffee'
+    redirect '/coffees'
   end 
 
   get '/logout' do 
