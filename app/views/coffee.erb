@@ -1,1 +1,9 @@
-<h1> You are logged in as <%= @user.username %> </h1>
+<% if logged_in? %>
+  <small> (You are logged in as <strong><%= @user.username %></strong>) </small>
+<% end %>   
+
+<h2>Select a Coffee to see more:</h2> 
+<% @coffees.each do |coffee| %>
+<p><strong><%= coffee.user.username %></strong> recently tried <strong><%= coffee.name %></strong>, from <strong><%= coffee.roaster %></strong>
+<br>
+<% end %> 
