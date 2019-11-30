@@ -25,6 +25,9 @@ class UserController < ApplicationController
   end 
 
   get '/signup' do 
+    if logged_in? 
+      redirect '/' 
+    end 
     erb :signup 
   end 
 

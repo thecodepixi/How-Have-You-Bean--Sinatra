@@ -50,6 +50,13 @@ class CoffeeController < ApplicationController
     redirect "/coffees/#{@coffee.id}"
   end 
 
+  get '/coffees/roaster/:roaster' do 
+    @roaster = params[:roaster].split("-").join(" ").titleize 
+    @coffees = Coffee.where(roaster: @roaster)
+
+    erb :roaster
+  end 
+
   delete '/coffees/:id/delete' do 
     @coffee = Coffee.find(params[:id]) 
     if @coffee.user_id != session[:user_id] 
