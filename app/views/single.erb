@@ -5,7 +5,7 @@
 <h3>Rating: <%= @coffee.rating %> out of 5 Stars </h3>
 <% if logged_in? && session[:user_id] == @coffee.user_id %>
 <br>
-<p><button href="/coffees/<%= @coffee.id %>/edit">Edit This Coffee</button>
+<p><button><a href="/coffees/<%= @coffee.id %>/edit">Edit This Coffee</a></button>
 <form method="post" action="/coffees/<%= @coffee.id %>/delete">
   <input type="hidden" id="hidden" name="_method" value="delete">
   <button type="submit">Delete This Coffee</button> 

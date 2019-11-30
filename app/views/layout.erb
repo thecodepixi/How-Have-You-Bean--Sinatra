@@ -1,8 +1,9 @@
 <h1>How've You Bean?</h1>
+  <a href="/">See All Coffees</a>
 <% if logged_in? %> 
-  <a href="/coffees/user/<%= session[:user_id] %>">See All of Your Coffess</a>  |  <a href="/logout">Log Out</a>
+     |  <a href="/coffees/user/<%= session[:user_id] %>">See Your Coffees</a>  |  <a href="/logout">Log Out</a>
 <% else %> 
-  <a href="/login">Log In</a> (to see your beans) or <a href="/signup">Sign Up</a> (to start your bean collection)</h3> 
+  | <a href="/login">Log In</a> (to see your beans) or <a href="/signup">Sign Up</a> (to start your bean collection)</h3> 
 <% end %> 
 
 <%= yield %> 
