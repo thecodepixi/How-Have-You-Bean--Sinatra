@@ -8,7 +8,6 @@ gem 'sinatra-activerecord'
 gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
-gem 'sqlite3', '~> 1.3.6'
 
 group :development do
 	gem 'capybara'
