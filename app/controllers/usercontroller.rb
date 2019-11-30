@@ -5,6 +5,9 @@ class UserController < ApplicationController
   end 
 
   get '/login' do 
+    if logged_in? 
+      redirect '/coffees'
+    end 
     erb :login 
   end 
 
