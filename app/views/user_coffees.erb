@@ -1,5 +1,5 @@
 <h2>All of <%= @user.username %>'s Coffees:</h2> 
-<% @user.coffees.each do |coffee| %>
+<% @coffees.each do |coffee| %>
 <p><strong><a href="/coffees/<%= coffee.id %>"><%= coffee.name %></a></strong>, from <strong><%= coffee.roaster %></strong>
 <br>
 <% end %> 

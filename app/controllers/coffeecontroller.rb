@@ -24,7 +24,8 @@ class CoffeeController < ApplicationController
 
   get '/coffees/user/:id' do 
     @user = User.find(params[:id]) 
-
+    @coffees = Coffee.where(:user_id == @user.id).order(rating: :desc)
+    
     erb :user_coffees 
   end 
 
