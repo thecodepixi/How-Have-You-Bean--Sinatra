@@ -13,7 +13,7 @@ class UserController < ApplicationController
 
   post '/login' do 
     if params[:username].empty? || params[:password].empty?
-      redirect to '/index'
+      redirect to '/login'
     end 
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])

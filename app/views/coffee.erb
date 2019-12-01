@@ -1,9 +1,3 @@
-<% if logged_in? %>
-  <small> (You are logged in as <strong><%= @user.username %></strong>) </small>
-  <p><a href="/coffees/new">Add A New Coffee To Your Account</a>
-  <br><br>
-<% end %>   
-
 <h2>All Coffees:</h2> </h3>(<%= @coffees.count %> coffees logged so far)</h4>
 <% @coffees.each do |coffee| %>
 <p><strong><a href="/coffees/user/<%= coffee.user_id %>"><%= coffee.user.username %></a></strong> recently tried <strong><a href="/coffees/<%= coffee.id %>"><%= coffee.name %></a></strong>, from <strong><a href="/coffees/roaster/<%= coffee.roaster.parameterize %>"><%= coffee.roaster %></a></strong>
