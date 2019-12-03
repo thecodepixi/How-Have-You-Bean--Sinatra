@@ -19,12 +19,12 @@ class CoffeeController < ApplicationController
     @user = User.find(session[:user_id])
     coffee= Coffee.new(params[:coffee])
     @user.coffees << coffee
-    redirect '/coffees'
+    redirect "/coffees/user/#{@user.id}"
   end 
 
   get '/coffees/user/:id' do 
     @user = User.find(params[:id]) 
-    @coffees = Coffee.where(:user_id == @user.id).order(rating: :desc)
+    @coffees = @user.coffees.order(rating: :desc)
     
     erb :user_coffees 
   end 

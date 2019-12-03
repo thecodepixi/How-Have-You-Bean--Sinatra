@@ -1,7 +1,7 @@
 <h1><%= @coffee.name %></h1>
 <h2>Roasted by: <%= @coffee.roaster %></h2>
 <h3>Roast Level: <%= @coffee.roast_level.capitalize %></h3>
-<h3>Tasting Notes: <%= @coffee.tasting_notes %></h3>
+<h3>Tasting Notes:</h3> <%= @coffee.tasting_notes %>
 <h3>Rating: <%= @coffee.rating %> out of 5 Stars </h3>
 <% if logged_in? && session[:user_id] == @coffee.user_id %>
 <br>
