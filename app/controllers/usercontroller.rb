@@ -15,6 +15,7 @@ class UserController < ApplicationController
     if params[:username].empty? || params[:password].empty?
       redirect to '/login'
     end 
+    validate_user 
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id 
@@ -36,6 +37,8 @@ class UserController < ApplicationController
       redirect '/signup'
     end 
 
+    validate_user 
+    
     if User.find_by(username: params[:username])
       redirect '/login'
     end 
