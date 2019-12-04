@@ -17,7 +17,7 @@ class CoffeeController < ApplicationController
 
   post '/coffees/new' do 
     @user = User.find(session[:user_id])
-    coffee= Coffee.new(params[:coffee])
+    coffee = Coffee.new(params[:coffee])
     @user.coffees << coffee
     redirect "/coffees/user/#{@user.id}"
   end 
