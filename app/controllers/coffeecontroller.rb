@@ -52,8 +52,8 @@ class CoffeeController < ApplicationController
   end 
 
   get '/coffees/roaster/:roaster' do 
-    @roaster = params[:roaster].split("-").join(" ").titleize 
-    @coffees = Coffee.where(roaster: @roaster)
+    @roaster = params[:roaster].split("-").join(" ").downcase 
+    @coffees = Coffee.all.select{|c| c.roaster.downcase == @roaster}
 
     erb :roaster
   end 
