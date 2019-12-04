@@ -51,7 +51,7 @@ class CoffeeController < ApplicationController
     redirect "/coffees/#{@coffee.id}"
   end 
 
-  get '/coffees/roaster/:roaster' do 
+  get '/coffees/roasters/:roaster' do 
     @roaster = params[:roaster].split("-").join(" ").downcase 
     @coffees = Coffee.all.select{|c| c.roaster.downcase == @roaster}
 
