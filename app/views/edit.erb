@@ -8,14 +8,14 @@
 <input type="text" name="coffee[roaster]" id="coffee[roaster]" value="<%= @coffee.roaster %>">
 <p><label for="coffee[roast_level]" required>Roast Level: </label>
 <p><input type="radio" name="coffee[roast_level]" value="light"> Light
-<p><input type="radio" name="coffee[roast_level]" value="medium"> Medium
-<p><input type="radio" name="coffee[roast_level]" value="dark"> Dark
+<input type="radio" name="coffee[roast_level]" value="medium"> Medium
+<input type="radio" name="coffee[roast_level]" value="dark"> Dark
 <p><label for="coffee[rating]" required>Rating (1 - 5 Stars):</label>
 <p><input type="radio" name="coffee[rating]" value=1> 1 Star
-<p><input type="radio" name="coffee[rating]" value=2> 2 Star
-<p><input type="radio" name="coffee[rating]" value=3> 3 Star
-<p><input type="radio" name="coffee[rating]" value=4> 4 Star
-<p><input type="radio" name="coffee[rating]" value=5> 5 Star
+<input type="radio" name="coffee[rating]" value=2> 2 Stars
+<input type="radio" name="coffee[rating]" value=3> 3 Stars
+<input type="radio" name="coffee[rating]" value=4> 4 Stars
+<input type="radio" name="coffee[rating]" value=5> 5 Stars
 <p><label for="coffee[tasting_notes]">Tasting Notes: </label>
 <p><textarea name="coffee[tasting_notes]" id="coffee[tasting_notes]" ><%= @coffee.tasting_notes %></textarea>
 <p><input type="submit" value="Save Changes">
