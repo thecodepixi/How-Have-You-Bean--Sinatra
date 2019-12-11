@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Laila:400,700&display=swap');
 
 body {
   height: 100vh;
   margin: auto;
   background-color: rgb(250, 244, 239);
-  font-size: calc(8px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-family: Montserrat, sans-serif;
+  font-size: calc(6px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-family: Laila, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: rgb(88, 44, 12);
 }
 
 header {
@@ -13,9 +21,10 @@ header {
   background-color: rgb(238, 225, 212);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   color: rgb(88, 44, 12);
+  font-weight: 700;
 }
 
 a {
@@ -38,4 +47,56 @@ input {
 textarea {
   height: 100px;
   width: 350px;
+}
+
+.coffee {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 15px; 
+  box-shadow: -5px 5px 10px rgb(88, 44, 12);
+  margin: 0 15px;
+}
+
+.coffee-header {
+  margin: 10px;
+  text-align: center;
+  color: rgb(88, 44, 12);
+}
+
+.coffee-header h2 {
+  margin: 20px;
+  font-size: 2.2rem;
+}
+
+.coffees-block {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.coffee-details {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 15px; 
+  box-shadow: -6px 6px 15px rgb(88, 44, 12);
+  margin: 0 15px;
+  color: rgb(88, 44, 12);
+}
+
+.coffee-details h4 {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+#coffee-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px
+}
+
+#coffee-options button {
+  margin: 5px;
 }

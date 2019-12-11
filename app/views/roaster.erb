@@ -1,5 +1,11 @@
+<div class="coffee-header">
 <h2>All Coffees by <%= @roaster.titleize %> :</h2>
+</div>
+<div class-"coffees-block">
 <% @coffees.each do |coffee| %>
+<div class="coffee">
 <p><strong><a href="/coffees/user/<%= coffee.user_id %>"><%= coffee.user.username %></a></strong> recently tried <strong><a href="/coffees/<%= coffee.id %>"><%= coffee.name %></a></strong>
+</div>
 <br>
 <% end %> 
+</div>

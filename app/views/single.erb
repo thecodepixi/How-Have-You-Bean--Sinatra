@@ -1,13 +1,17 @@
-<h1><%= @coffee.name %></h1>
-<h2>Roasted by: <%= @coffee.roaster %></h2>
-<h3>Roast Level: <%= @coffee.roast_level.capitalize %></h3>
-<h3>Tasting Notes:</h3> <%= @coffee.tasting_notes %>
-<h3>Rating: <%= @coffee.rating %> out of 5 Stars </h3>
+<h1 style="font-family: Laila"><%= @coffee.name %></h1>
+<div class="coffee-details">
+<h4>Roasted by:</h4> <%= @coffee.roaster %>
+<h4>Roast Level:</h4> <%= @coffee.roast_level.capitalize %>
+<h4>Tasting Notes:</h4> <%= @coffee.tasting_notes %>
+<h4>Rating:</h4> <%= @coffee.rating %> out of 5 Stars
+<div id="coffee-options">
 <% if logged_in? && session[:user_id] == @coffee.user_id %>
 <br>
-<p><button><a href="/coffees/<%= @coffee.id %>/edit">Edit This Coffee</a></button>
+<a href="/coffees/<%= @coffee.id %>/edit"><button>Edit Coffee</button></a>
 <form method="post" action="/coffees/<%= @coffee.id %>/delete">
   <input type="hidden" id="hidden" name="_method" value="delete">
-  <button type="submit">Delete This Coffee</button> 
+  <button type="submit">Delete Coffee</button> 
 </form> 
 <% end %>
+</div>
+</div>

@@ -1,5 +1,9 @@
-<h2>All Coffees:</h2> </h3>(<%= @coffees.count %> coffees logged so far)</h4>
+<div class="coffee-header"><h2>All Coffees:</h2> <p><small>(<%= @coffees.count %> coffees logged so far)</small></p></div>
+<div class="coffees-block">
 <% @coffees.each do |coffee| %>
+<div class="coffee">  
 <p><strong><a href="/coffees/user/<%= coffee.user_id %>"><%= coffee.user.username %></a></strong> recently tried <strong><a href="/coffees/<%= coffee.id %>"><%= coffee.name %></a></strong>, from <strong><a href="/coffees/roasters/<%= coffee.roaster.parameterize %>"><%= coffee.roaster %></a></strong>
+</div>
 <br>
 <% end %> 
+</div>

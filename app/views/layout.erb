@@ -7,9 +7,9 @@
   <body>
   <header>
     <h1>How've You Bean?</h1>
-      <a href="/">See All Coffees</a>
+      <a href="/">All Coffees</a>
     <% if logged_in? %> 
-        |  <a href="/coffees/user/<%= session[:user_id] %>">See Your Coffees</a>  |  <a href="/logout">Log Out</a> <small> (You are logged in as <strong><%= User.find(session[:user_id]).username %></strong>) </small>
+        |  <a href="/coffees/user/<%= session[:user_id] %>">Your Coffees</a>  |  <a href="/logout">Log Out</a> <small> (You are logged in as <strong><%= User.find(session[:user_id]).username %></strong>) </small>
         <p><a href="/coffees/new">Add A New Coffee To Your Account</a>
     <% else %> 
       | <a href="/login">Log In (to see your beans)</a> or <a href="/signup">Sign Up (to start your bean collection)</a></h3> 

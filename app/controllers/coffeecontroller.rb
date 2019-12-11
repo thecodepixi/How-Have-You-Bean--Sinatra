@@ -2,7 +2,7 @@ class CoffeeController < ApplicationController
 
   get '/coffees' do 
     if logged_in? 
-      @user = User.find(session[:user_id])
+      @user = current_user
     end 
     @coffees = Coffee.all 
     erb :coffee
@@ -16,7 +16,7 @@ class CoffeeController < ApplicationController
   end 
 
   post '/coffees/new' do 
-    @user = User.find(session[:user_id])
+    @user = current_user
     coffee = Coffee.new(params[:coffee])
     @user.coffees << coffee
     redirect "/coffees/user/#{@user.id}"
@@ -37,7 +37,7 @@ class CoffeeController < ApplicationController
 
   get '/coffees/:id/edit' do 
     @coffee = Coffee.find(params[:id])
-    if @coffee.user_id != session[:user_id] 
+    if @coffee.user_id != current_user.id
       redirect '/login' 
     end 
 
@@ -60,12 +60,12 @@ class CoffeeController < ApplicationController
 
   delete '/coffees/:id/delete' do 
     @coffee = Coffee.find(params[:id]) 
-    if @coffee.user_id != session[:user_id] 
+    if @coffee.user_id != current_user.id
       redirect '/login'
     end 
     @coffee.delete 
 
-    redirect "/coffees/user/#{session[:user_id]}"
+    redirect "/coffees/user/#{current_user.id}"
   end 
 
 end 
